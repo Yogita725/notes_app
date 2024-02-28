@@ -1,0 +1,76 @@
+session1 (node local module like fs and utilising own created file)
+-> module.exports needs to be used in the other js file(own created) to export the functions or parameters or variables
+
+//const fs = require('fs')
+//fs.writeFileSync('Notes.txt','My name is Yogita Verma')
+
+//challenge 1, append notes.txt-----
+
+//fs.appendFileSync('Notes.txt',' \nI am on my journey to become Node js developer')
+//fs.appendFileSync('Notes.txt','\nI am learning and I will switch my job in this field')
+
+//--------
+// const utils = require('./utils.js')
+// console.log(utils)
+// ---------
+// const add = require('./utils.js')
+// const sum = add(2,3)
+// console.log(sum)
+
+//----------------------
+session 2 (use of npm library validator and chalk)
+
+const myNote = getNotes()
+console.log(myNote)
+
+var result = validator.isEmail('vermayogita@gmail.com')
+//console.log(validator.isURL('www.google.com'))
+if(result)
+{
+    console.log(chalk.green.bgWhite.bold('Success!'))
+    console.log(chalk.magenta.italic('You are good to go!'))
+}
+else{
+    console.log(chalk.red.bgWhite.bold('Failure!'))
+}
+
+//-------------------------------------------------
+
+session 3 (Taking inputs from user via command line argument)
+
+console.log(process.argv)
+-> node app.js Yogita --title="Things to buy"
+output : 
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'D:\\yogita.verma\\OneDrive - Infosys Limited\\Doc\\April 2023 - Sep 2023\\Grow up\\notes-app\\app.js',
+  'Yogita',
+  '--title=Things to buy'
+]
+
+----------
+
+yargs.argv
+console.log(yargs.argv)
+-> node app.js Yogita --title="Things to buy"
+output :
+{ _: [ 'Yogita' ], title: 'Things to buy', '$0': 'app.js' }
+
+//-------------------------------------------------------------------
+
+session 4 (yargs and it's functions)
+
+console.log(yargs.argv)
+->node app.js --help
+->node app.js --version
+output: 1.0.0
+
+//customizing the version
+yargs.version('1.1.0')
+->node app.js --version
+output: 1.1.0
+
+
+
+
+
